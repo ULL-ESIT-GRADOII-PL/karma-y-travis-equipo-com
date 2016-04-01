@@ -25,6 +25,10 @@ describe('Medida', function() {
   });
 
   describe('#calculate', function() {
+    it("no deberia saber convertir de c a j (caso edge)", function(){
+      expect(medida.calculate("32c","j")).to.equal('Desconozco como convertir desde "c" hasta "j" \n');
+    });
+
     it("deberia retornar un string", function(){
       expect(medida.calculate("32","c")).to.be.a("string");
     });
